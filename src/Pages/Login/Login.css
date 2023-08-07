@@ -1,0 +1,70 @@
+.topmainlogin {
+  min-height: 100vh;
+  background-color: #b944ac;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginmain {
+  background-color: white;
+  min-height: 30vw;
+  border-radius: 7px;
+  width: 25vw;
+  padding: 2vw;
+}
+
+#loginh2 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2vw;
+}
+
+.midloginsignupselect{
+    display: flex;
+    margin-top: 2vw;
+}
+
+.loginn,.singupp{
+    width: 50%;
+    padding: 1vw .5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginn{
+    background-color: #c043ad;
+    color: white;
+    border-radius: 7px;
+}
+
+.singupp{
+    border: 1px solid grey;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.inputdiv{
+    margin-top: 2vw;
+}
+
+.inputindi{
+    width: 100%;
+    padding: .25vw .5vw;
+    border-radius: 5px;
+    border: 1px solid grey;
+    outline: none;
+}
+
+.btnlogin{
+    margin-top: 1.5vw;
+    padding: .75vw;
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    background-color: #c043ad;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
