@@ -1,10 +1,10 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import './Hero.css'
 const Hero = () => {
-const [active,setactive] = useState(false)
-const handleClick = () => {
-    setactive(true)
-}
+    const [active, setactive] = useState(false)
+    const handleClick = () => {
+        setactive(true)
+    }
     return (
         <>
             <div className="tophero">
@@ -42,8 +42,8 @@ const handleClick = () => {
 
                         <div className="topheadingselect">
                             <div className="topheadingselect1">
-                            <h3 onClick={handleClick} className={active?"activeclass":""}>Courses</h3>
-                            <h3 onClick={handleClick} className={active?"activeclass":""} id='serv'>Services</h3>
+                                <h3 onClick={handleClick} className={active ? "activeclass" : ""}>Courses</h3>
+                                <h3 onClick={handleClick} className={active ? "activeclass" : ""} id='serv'>Services</h3>
                             </div>
 
                             <div className="indicardinselector">
@@ -62,7 +62,47 @@ const handleClick = () => {
                 </div>
                 <div className="righthero">
                     <div className="mainrightcardd">
+                        <div className="purplediv">
+                            <div className="txtleftpurple">
+                                <h2>Empowering Education Through Innovation</h2>
 
+
+                                <div className="reactangularwhitediv">
+                                    {/* <div className="smallcircleorg"></div> */}
+                                    <h6>Total Students</h6>
+                                    <h2>159.89</h2>
+
+                                </div>
+                            </div>
+
+                            <div className="girlwithtab">
+                                <img src="https://www.oronium.com/img/casual-life-3d-likes.png" alt="" />
+                            </div>
+                        </div>
+
+                        <div className="earning_worldtop10_parent">
+                            <div className="worldtop1">
+                                <h5>World Top 10 University</h5>
+                                <div className="statisticsimghlder">
+                                    <img src="https://getwpfunnels.com/wp-content/uploads/2022/12/statistic.png" alt="" />
+                                </div>
+                            </div>
+                            <div className="earningdsreport">
+                                <h5>Earnings Report</h5>
+                                <div className="indiearnings">
+                                    <h6>Total students</h6>
+                                  <h3>78k</h3>
+                                </div>
+                                <div className="indiearnings">
+                                    <h6>BD topper students</h6>
+                                    <h3>8k</h3>
+                                </div>
+                                <div className="indiearnings">
+                                    <h6>Contributor bobus</h6>
+                                    <h3>706</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

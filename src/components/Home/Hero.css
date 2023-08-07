@@ -29,7 +29,7 @@
         margin-left: 2vw;
         padding: 1.2vw;
         border-radius: 50%;
-        background-color: red;
+        background-color: #d8234a;
         font-weight: 900;
         color: white;
         font-size: 1.5vw;
@@ -54,7 +54,7 @@
  .semicircleheroleft{
     margin-left: 2vw;
     padding: 1.25vw;
-    background-color: orange;
+    background-color: #ff9830;
     border-radius: 50%;
     border: 2px solid white;
     font-weight: 900;
@@ -76,7 +76,7 @@
     left: 4%;
     width: 10vw;
     height: 10vw;
-    background-color: rgba(255, 166, 0, 0.155);
+    background-color: #fdf1da;
     border-radius: 50%;
     position: absolute;
     z-index: -1;
@@ -139,7 +139,136 @@ font-size: .75vw;
     min-height: 80vh;
     border-radius: 10px;
    margin-right: -9vw;
-   /* position: absolute;
-   z-index:200; */
-  /* background-color: red; */
+  padding: 3.5vw 2vw;
+}
+
+.purplediv{
+    min-height: 20vw;
+    background-color: #735688;
+    border-radius: 10px;
+    padding: 3.5vw 2vw;
+    display: flex;
+}
+
+.girlwithtab{
+    width: 60%;
+}
+
+.girlwithtab img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.txtleftpurple{
+    width: 40%;
+    overflow: hidden;
+}
+
+
+.txtleftpurple h2{
+    color: white;
+    font-size: 2vw;
+}
+
+.reactangularwhitediv{
+    background-color: white;
+   
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vw;
+    padding: .5vw 0;
+}
+
+/* .chld2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.reactangularwhitediv h2{
+    color: black;
+    text-align: center;
+}
+
+.earning_worldtop10_parent{
+    display: flex;
+    /* justify-content: center; */
+    margin: 2.5vw 2vw 2vw 2vw;
+    padding: 0 1vw;
+    /* background-color: red; */
+    height: 10vw;
+}
+
+.worldtop1{
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    padding: .75vw;
+    min-height: 10vw;
+    width: 50%;
+flex: none;
+order: 1;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.earningdsreport{
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    padding: .75vw;
+    min-height: 10vw;
+    width: 50%;
+flex: none;
+order: 1;
+margin-left: 2vw;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.statisticsimghlder{
+    width: 7vw;
+    height: 7vw;
+}
+
+.statisticsimghlder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.worldtop1 h5, .earningdsreport h5{
+    color: grey;
+    font-size: .75vw;
+    margin-bottom: .5vw;
+}
+
+.indiearnings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1.5px solid grey;
+    margin: .1vw;
+}
+
+.indiearnings h6{
+    font-size: .6vw;
+    color: grey;
+}
+
+.indiearnings h3{
+    font-size: 1vw;
+    color: black;
 }
