@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Signup.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 const Signup = () => {
     useEffect(() => {
         document.title = "Signup"
@@ -84,6 +85,7 @@ const Signup = () => {
     }
     return (
         <>
+        <Navbar />
             <div className="topmainlogin">
                 <div className="loginmain">
                     <h2 id='loginh2'>Signup Form</h2>
