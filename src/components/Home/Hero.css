@@ -2,6 +2,7 @@
     min-height: 110vh;
     display: flex;
     border: 4vw solid rgba(128, 128, 128, 0.578);
+    /* border-top: none; */
 }
 
 .lefthero{

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './Hero.css'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar'
 const Hero = () => {
     const [active, setactive] = useState(false)
     const handleClick = () => {
@@ -12,7 +13,11 @@ const Hero = () => {
     }
     return (
         <>
+            <Navbar />
             <div className="tophero">
+                <div className="tophero0">
+
+                </div>
                 <div className="lefthero">
                     <div className="toph1hero">
                         <span className='h1oftoph1hero'>Getting You</span>{""}{""}
@@ -96,7 +101,7 @@ const Hero = () => {
                                 <h5>Earnings Report</h5>
                                 <div className="indiearnings">
                                     <h6>Total students</h6>
-                                  <h3>78k</h3>
+                                    <h3>78k</h3>
                                 </div>
                                 <div className="indiearnings">
                                     <h6>BD topper students</h6>
@@ -111,7 +116,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <button style={{cursor:"pointer"}} onClick={handleGoToLoginPg}>Login</button>
+            <button style={{ cursor: "pointer" }} onClick={handleGoToLoginPg}>Login</button>
         </>
     )
 }
