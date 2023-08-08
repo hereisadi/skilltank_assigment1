@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import './Hero.css'
+import { useNavigate } from 'react-router-dom'
 const Hero = () => {
     const [active, setactive] = useState(false)
     const handleClick = () => {
         setactive(true)
+    }
+    const navigate = useNavigate()
+    const handleGoToLoginPg = () => {
+        navigate("/login")
     }
     return (
         <>
@@ -106,6 +111,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
+            <button style={{cursor:"pointer"}} onClick={handleGoToLoginPg}>Login</button>
         </>
     )
 }

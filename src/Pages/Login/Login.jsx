@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Login.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+    useEffect(()=>{
+        document.title="Login"
+    })
     const width = window.innerWidth;
     const height = window.innerHeight;
     const [email, setEmail] = useState("")
     const [pwd, setPwd] = useState("")
+    const navigate = useNavigate();
     const [disablebtn, setDisablebtn] = useState(false)
+    const [status, setStatus] = useState(false)
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
     }
@@ -21,44 +27,55 @@ const Login = () => {
     const handleLoginBtn = async (e) => {
         e.preventDefault()
         setDisablebtn(true)
+        setStatus(true)
         axios.post("https://skilltank-assignment-backend.onrender.com/login",{
+        // axios.post("http://localhost:3000/login",{
             email, pwd
         }).then(response => {
             if(response){
-                alert("Login successful")
+                const token = response.data.token;
+                localStorage.setItem('token', token);
+                setStatus(false)
                 setDisablebtn(false)
+                navigate("/dashboard")
             }
         })
         .catch(error => {
             if(error.response && error.response.data.error==="Please fill all required fields"){
                 alert("Please fill all required fields. Login failed")
                 setDisablebtn(false)
+                setStatus(false)
                 setEmail("")
                 setPwd("")
             }else if(error.response && error.response.data.error==="Password should not be less than 8 characters"){
                 alert("Wrong password. Login failed")
                 setDisablebtn(false)
+                setStatus(false)
                 setEmail("")
                 setPwd("")
             }else if(error.response && error.response.data.error==="Invalid email or password"){
                 alert("Invalid email or password")
                 setDisablebtn(false)
+                setStatus(false)
                 setEmail("")
                 setPwd("")
             }else if(error.response && error.response.data.error==="Invalid password"){
                 alert("Invalid password")
                 setDisablebtn(false)
+                setStatus(false)
                 setEmail("")
                 setPwd("")
             } else if(error.response && error.response.data.error==="Invalid email"){
                 alert("Invalid email")
                 setDisablebtn(false)
+                setStatus(false)
                 setEmail("")
                 setPwd("")
             }
             else{
                 alert("Something went wrong.")
                 setDisablebtn(false)
+                setStatus(false)
                 setEmail("")
                 setPwd("")
             }
@@ -85,7 +102,9 @@ const Login = () => {
 
                     <h5 style={{ color: "red", marginTop: "1vw" }}>Forgot Password?</h5>
 
-                    <button disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} className='btnlogin' onClick={handleLoginBtn} >Login</button>
+                    <button disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} className='btnlogin' onClick={handleLoginBtn} >
+                    {status ? "Loggingin..." : "Login"}
+                    </button>
                 </div>
             </div>
         </>

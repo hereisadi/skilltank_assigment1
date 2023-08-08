@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Signup.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const Signup = () => {
+    useEffect(() => {
+        document.title = "Signup"
+    })
     const width = window.innerWidth;
     const height = window.innerHeight;
     const [email, setEmail] = useState("")
     const [disablebtn, setDisablebtn] = useState(false)
     const [pwd, setPwd] = useState("")
+    const [status, setStatus] = useState(false)
     const navigate = useNavigate();
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
@@ -23,13 +27,16 @@ const Signup = () => {
     const handleSignup = async (e) => {
         e.preventDefault()
         setDisablebtn(true)
+        setStatus(true)
         axios.post("https://skilltank-assignment-backend.onrender.com/signup",
+            // axios.post("http://localhost:3000/signup",
             { email, pwd })
             .then(response => {
                 if (response) {
                     alert("User registered successfully")
                     navigate("/login")
                     setDisablebtn(false)
+                    setStatus(false)
                     setEmail("")
                     setPwd("")
                 }
@@ -40,27 +47,32 @@ const Signup = () => {
                 if (error.response && error.response.data.error === "Please fill all required fields") {
                     alert("Please fill all required fields")
                     setDisablebtn(false)
+                    setStatus(false)
                     setEmail("")
                     setPwd("")
                 } else if (error.response && error.response.data.error === "Password should not be less than 8 characters") {
                     alert("Password should not be less than 8 characters")
                     setDisablebtn(false)
+                    setStatus(false)
                     setEmail("")
                     setPwd("")
                 } else if (error.response && error.response.data.error === "Email already exists") {
                     alert("Email already exists")
                     setDisablebtn(false)
+                    setStatus(false)
                     setEmail("")
                     setPwd("")
-                } else if(error.response && error.response.data.error==="Invalid email"){
+                } else if (error.response && error.response.data.error === "Invalid email") {
                     alert("Invalid email")
                     setDisablebtn(false)
+                    setStatus(false)
                     setEmail("")
                     setPwd("")
                 }
                 else {
                     alert("Something went wrong")
                     setDisablebtn(false)
+                    setStatus(false)
                     setEmail("")
                     setPwd("")
                 }
@@ -85,7 +97,9 @@ const Signup = () => {
                         <input className='inputindi' type="password" placeholder='Password' required value={pwd} onChange={handlePwdChange} />
                     </div>
 
-                    <button className='btnlogin' disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} onClick={handleSignup}>Signup</button>
+                    <button className='btnlogin' disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} onClick={handleSignup}>
+                        {status ? "Signingup..." : "Signup"}
+                    </button>
                 </div>
             </div>
         </>

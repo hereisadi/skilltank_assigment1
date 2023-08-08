@@ -68,3 +68,17 @@
     outline: none;
     border-radius: 5px;
 }
+
+#dignoutbtnn{
+    width: 35%;
+    margin: 2vw auto !important;
+    text-align: center;
+}
+
+#dashboardmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
