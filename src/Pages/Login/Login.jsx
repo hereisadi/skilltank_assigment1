@@ -94,7 +94,7 @@ const Login = () => {
 
                     <div className="midloginsignupselect">
                         <div className="loginn">Login</div>
-                        <div onClick={handleSignupMove} className="singupp">Signup</div>
+                        <div onClick={handleSignupMove} disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} className="singupp">Signup</div>
                     </div>
 
                     <div className="inputdiv">
@@ -112,7 +112,7 @@ const Login = () => {
                     </button>
                     
                     <div id="btngohomeholder">
-                        <button onClick={handleGoHome} id='gotohome'>Go to Home?</button>
+                        <button disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} onClick={handleGoHome} id='gotohome'>Go to Home?</button>
                     </div>
 
                 </div>

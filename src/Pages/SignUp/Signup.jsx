@@ -91,7 +91,7 @@ const Signup = () => {
                     <h2 id='loginh2'>Signup Form</h2>
 
                     <div className="midloginsignupselect">
-                        <div style={{ cursor: "pointer", backgroundColor: "white", color: "black", border: "1px solid grey" }} onClick={handleloginMove} className="loginn">Login</div>
+                        <div style={{  backgroundColor: "white", color: "black", border: "1px solid grey",cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1  }} onClick={handleloginMove} disabled={disablebtn} className="loginn">Login</div>
                         <div style={{ cursor: "default", backgroundColor: "#c043ad", color: "white", border: "1px solid grey" }} className="singupp">Signup</div>
                     </div>
 
@@ -108,7 +108,7 @@ const Signup = () => {
                     </button>
                     
                     <div id="btngohomeholder">
-                        <button onClick={handleGoHome} id='gotohome'>Go to Home?</button>
+                        <button onClick={handleGoHome} disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} id='gotohome'>Go to Home?</button>
                     </div>
                 </div>
 
