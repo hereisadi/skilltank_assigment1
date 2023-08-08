@@ -82,3 +82,22 @@
     flex-direction: column;
     min-height: 100vh;
 }
+
+#btngohomeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gotohome{
+    margin-top: 2vw;
+    text-align: center;
+    background-color: #ff9830;
+    color: white;
+    width: 30%;
+    border: none;
+    outline: none;
+    padding: .5vw;
+    border-radius: 7px;
+    cursor: pointer;
+}

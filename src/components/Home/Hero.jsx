@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import './Hero.css'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 const Hero = () => {
     const [active, setactive] = useState(false)
     const handleClick = () => {
         setactive(true)
     }
-    const navigate = useNavigate()
-    const handleGoToLoginPg = () => {
-        navigate("/login")
-    }
+    // const navigate = useNavigate()
+    // const handleGoToLoginPg = () => {
+    //     navigate("/login")
+    // }
     return (
         <>
             <Navbar />
@@ -116,7 +116,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <button style={{ cursor: "pointer" }} onClick={handleGoToLoginPg}>Login</button>
+            {/* <button style={{ cursor: "pointer" }} onClick={handleGoToLoginPg}>Login</button> */}
         </>
     )
 }

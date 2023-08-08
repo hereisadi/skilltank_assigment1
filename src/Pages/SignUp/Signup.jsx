@@ -78,6 +78,10 @@ const Signup = () => {
                 }
             });
     }
+
+    const handleGoHome = () => {
+        navigate("/")
+    }
     return (
         <>
             <div className="topmainlogin">
@@ -100,7 +104,12 @@ const Signup = () => {
                     <button className='btnlogin' disabled={disablebtn} style={{ cursor: disablebtn ? "not-allowed" : "pointer", opacity: disablebtn ? 0.5 : 1 }} onClick={handleSignup}>
                         {status ? "Signingup..." : "Signup"}
                     </button>
+                    
+                    <div id="btngohomeholder">
+                        <button onClick={handleGoHome} id='gotohome'>Go to Home?</button>
+                    </div>
                 </div>
+
             </div>
         </>
     )
